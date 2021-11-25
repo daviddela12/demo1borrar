@@ -1,2 +1,4 @@
-package com.example.demo1borrar.domain;public class Order {
+package com.example.demo1borrar.domain;
+
+public class Order {
 }
