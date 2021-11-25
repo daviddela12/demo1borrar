@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Customer {
     @Id
+    @Column(nullable = false)
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer idCustomer;
 
@@ -20,4 +22,7 @@ public class Customer {
 
     @Column(nullable = false)
     private String nif;
+
+   @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+    private Set<Purchase> listPurchases;
 }

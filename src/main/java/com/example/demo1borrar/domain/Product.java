@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Entity
 public class Product {
     @Id
+    @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idProduct;
 
@@ -20,4 +22,7 @@ public class Product {
 
     @Column(nullable = false)
     private Double price;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Set<Purchase> purchaseSet;
 }
