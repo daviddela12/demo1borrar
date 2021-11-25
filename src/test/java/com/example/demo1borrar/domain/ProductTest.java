@@ -24,7 +24,7 @@ class ProductTest {
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         validator = validatorFactory.getValidator();
         product = new Product();
-        product.setIdProduct(1);
+        product.setIdProduct(1L);
         product.setPrice(2D);
         product.setName("product 1");
     }

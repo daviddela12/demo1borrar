@@ -21,7 +21,7 @@ class CustomerTest {
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         validator = validatorFactory.getValidator();
         customer = new Customer();
-        customer.setIdCustomer(1);
+        customer.setIdCustomer(1L);
         customer.setName("Nombre");
         customer.setNif("12345678P");
     }

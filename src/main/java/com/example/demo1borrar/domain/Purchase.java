@@ -16,7 +16,7 @@ public class Purchase {
     @Id
     @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idOrder;
+    private Long idOrder;
 
     @Column(nullable = false)
     private Date creationDate;
