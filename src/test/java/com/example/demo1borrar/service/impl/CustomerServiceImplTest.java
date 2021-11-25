@@ -32,7 +32,7 @@ class CustomerServiceImplTest {
         customerMocked.setIdCustomer(1l);
         customerMocked.setName("Name");
         customerMocked.setNif("12345678Z");
-        when(customerRepository.getById(1L)).thenReturn(customerMocked);
+        when(customerRepository.findById(1L)).thenReturn(Optional.ofNullable(customerMocked));
     }
 
     @DisplayName("Service call to repository find By Id")
@@ -42,7 +42,7 @@ class CustomerServiceImplTest {
         customer.setIdCustomer(1l);
         customer.setName("Name");
         customer.setNif("12345678Z");
-        Customer response = customerServiceImpl.getById(customer.getIdCustomer());
-        verify(customerRepository, times(1)).getById(any(Long.class));
+        Customer response = customerServiceImpl.findById(customer.getIdCustomer());
+        verify(customerRepository, times(1)).findById(any(Long.class));
     }
 }

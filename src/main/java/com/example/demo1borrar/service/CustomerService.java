@@ -4,5 +4,5 @@ import com.example.demo1borrar.domain.Customer;
 
 public interface CustomerService {
 
-    public Customer getById(Long id);
+    public Customer findById(Long id);
 }
