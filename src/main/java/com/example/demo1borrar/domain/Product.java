@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Data
@@ -18,9 +21,12 @@ public class Product {
     private Integer idProduct;
 
     @Column(nullable = false)
+    @NotNull
     private String name;
 
     @Column(nullable = false)
+    @NotNull
+    @DecimalMin("0.1")
     private Double price;
 
     @ManyToMany(fetch = FetchType.LAZY)
